@@ -143,74 +143,32 @@ public class Ventas {
 
     }
 
-    public static void CrearProducto() {
+    public static void CrearVenta() {
 
-        int id1 = (ListaProductos.size() + 1);
+        int idVenta1 = (ListaVentas.size() + 1); //id de venta
 
-        System.out.println("Bienvenido a crear un producto");
-
-        System.out.println("Ingrese el nombre");
-        String nombre1 = sc.next();
+        System.out.println("Bienvenido a crear una venta");
         
-        System.out.println("Ingrese la cantidad");
-        int cantidad1 = sc.nextInt();
+        Usuarios usuario = Usuarios.BuscarUsuario(); //
+        
+        Productos producto = Productos.BuscarProductos(); //
+        
+        double precio1 = producto.precio; // precio de producto
+        
+        int idproducto = producto.id; // id del producto
+        
+        String nombreProducto = producto.nombre;
+        
+        int idUsuario = usuario.id; //id de usuario
+        
+        String nombreUsuario = usuario.nombre;
 
-        System.out.println("Ingrese el precio");
-        double precio1 = sc.nextDouble();
-
-        System.out.println("Ingrese la descricion");
-        String descripcion1 = sc.next();
-
-        Productos producto = new Productos(id1, nombre1,cantidad1, precio1, descripcion1);
-
-        ListaProductos.add(producto);
+        Ventas venta = new Ventas(idVenta1, idUsuario, idproducto, nombreUsuario, nombreProducto, precio1);
+        
+       ListaVentas.add(venta);
     }
     
-    public static void editarProducto() {
-
-        Productos producto = BuscarProductos();
-
-        int numero = 0;
-
-        while (numero == 0) {
-
-            System.out.println("Ingrese la opcion que desee \n 1. Editar nombre \n 2.Editar cantidad \n 3.Editar precio  \n 4.Editar descripcion \n Salir");
-            numero = sc.nextInt();
-
-            if (numero == 1) {
-                System.out.println("ingrese el nombre a editar");
-                String nombre1 = sc.next();
-
-                producto.nombre = nombre1;
-
-            }
-            if (numero == 2) {
-                System.out.println("ingrese la cantidad a editar");
-                int cantidad1 = sc.nextInt();
-
-                producto.cantidad = cantidad1;
-
-            }
-
-            if (numero == 3) {
-                System.out.println("ingrese el precio a editar");
-                double precio1 = sc.nextDouble();
-
-                producto.precio = precio1;
-
-            }
-
-            if (numero == 4) {
-                System.out.println("ingrese la descripcion a editar");
-                String descripcion1 = sc.next();
-
-                producto.Descripcion = descripcion1;
-
-            }
-
-        }
-
-    }
+   
     
     
     

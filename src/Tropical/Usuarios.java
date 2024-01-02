@@ -54,7 +54,7 @@ public class Usuarios {
 
     public static Usuarios BuscarUsuario() {
 
-        System.out.println("Ingrese el nombre a buscar");
+        System.out.println("Ingrese el nombre a buscar del usuario");
         String buscado = sc.next();
 
         for (Usuarios ListaUsuario : ListaUsuarios) {
@@ -78,7 +78,7 @@ public class Usuarios {
 
     public static void ImprimirUnUsuario() {
 
-        System.out.println("Ingrese el nombre a buscar");
+        System.out.println("Ingrese el nombre a buscar del usuario");
         String buscado = sc.next();
 
         for (Usuarios ListaUsuario : ListaUsuarios) {
